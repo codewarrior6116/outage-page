@@ -1,9 +1,15 @@
-const launchtime = new Date("2026-12-01T10:00:00");
+const launchTime = new Date("2026-12-01T10:00:00");
+let timer;
 
 function updateCountdown(){
     const now = new Date();
     const diff = launchtime - now;
-
+    if (diff <= 0) {
+        document.getElementById("countdown").hidden = true;
+        document.getElementById("buy-btn").hidden = false;
+        clearInterval(timer);
+        return;
+    }
     const days = Math.floor(diff/(1000*60*60*24));
     const hours = Math.floor(diff/(1000*60*60))%24;
     const minutes = Math.floor(diff/(1000*60))%60;
@@ -17,4 +23,4 @@ function updateCountdown(){
 }
 
 updateCountdown();
-setInterval(updateCountdown,1000);
+timer = setInterval(updateCountdown,1000);

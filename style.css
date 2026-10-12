@@ -59,3 +59,19 @@ body{
 .particles span:nth-child(4) { left: 85%; top: 65%; animation-duration: 10s; background: rgba(170, 130, 255, 0.35); }
 .particles span:nth-child(5) { left: 25%; top: 75%; width: 150px; height: 150px; animation-delay: -4s; }
 .particles span:nth-child(6) { left: 60%; top: 35%; width: 60px; height: 60px; animation-duration: 7s; background: rgba(255, 255, 255, 0.3); }
+#buy-btn {
+    margin-top: 24px;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #003791;
+    background: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#buy-btn:hover {
+    transform: scale(1.05);
+}
