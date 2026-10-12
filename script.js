@@ -15,10 +15,11 @@ function updateCountdown(){
         clearInterval(timer);
         return;
     }
-    const days = Math.floor(diff/(1000*60*60*24));
-    const hours = Math.floor(diff/(1000*60*60))%24;
-    const minutes = Math.floor(diff/(1000*60))%60;
-    const seconds = Math.floor(diff/1000)%60;
+    const totalSeconds = Math.ceil(diff / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const minutes = Math.floor(totalSeconds / 60) % 60;
+    const seconds = totalSeconds % 60;
 
     document.getElementById("days").textContent = String(days).padStart(2, "0");
     document.getElementById("hours").textContent = String(hours).padStart(2, "0");
@@ -28,4 +29,4 @@ function updateCountdown(){
 }
 
 updateCountdown();
-timer = setInterval(updateCountdown,1000);
+timer = setInterval(updateCountdown,250);
