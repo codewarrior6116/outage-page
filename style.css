@@ -24,3 +24,38 @@ body{
     font-size: 40px;
     font-weight: bold;
 }
+.particles{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+.particles span{
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(120, 170, 255, 0.4);
+    filter: blur(20px);
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-40px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.particles span:nth-child(1) { left: 10%; top: 20%; }
+.particles span:nth-child(2) { left: 75%; top: 15%; width: 180px; height: 180px; animation-duration: 8s; }
+.particles span:nth-child(3) { left: 50%; top: 70%; width: 80px; height: 80px; animation-delay: -2s; }
+.particles span:nth-child(4) { left: 85%; top: 65%; animation-duration: 10s; background: rgba(170, 130, 255, 0.35); }
+.particles span:nth-child(5) { left: 25%; top: 75%; width: 150px; height: 150px; animation-delay: -4s; }
+.particles span:nth-child(6) { left: 60%; top: 35%; width: 60px; height: 60px; animation-duration: 7s; background: rgba(255, 255, 255, 0.3); }
