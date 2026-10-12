@@ -10,9 +10,12 @@ function updateCountdown(){
     const now = new Date();
     const diff = launchTime - now;
     if (diff <= 0) {
-        document.getElementById("countdown").hidden = true;
-        document.getElementById("buy-btn").hidden = false;
+        document.getElementById("seconds").textContent = "00";
         clearInterval(timer);
+        setTimeout(function () {
+            document.getElementById("countdown").hidden = true;
+            document.getElementById("buy-btn").hidden = false;
+        }, 1000);
         return;
     }
     const totalSeconds = Math.ceil(diff / 1000);
