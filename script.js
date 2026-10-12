@@ -1,9 +1,14 @@
-const launchTime = new Date("2026-12-01T10:00:00");
+let launchTime = new Date("2026-12-01T10:00:00");
+
+const params = new URLSearchParams(location.search);
+if (params.has("demo")) {
+    launchTime = new Date(Date.now() + 10 * 1000);
+}
 let timer;
 
 function updateCountdown(){
     const now = new Date();
-    const diff = launchtime - now;
+    const diff = launchTime - now;
     if (diff <= 0) {
         document.getElementById("countdown").hidden = true;
         document.getElementById("buy-btn").hidden = false;
